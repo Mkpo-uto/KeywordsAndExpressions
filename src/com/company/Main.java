@@ -77,6 +77,11 @@ public class Main {
 
         wakeUpValue = BarkingDog.shouldWakeUp(true, -1);
         System.out.println(" Output " + wakeUpValue + " should be false");
+
+        System.out.println("Leap year is " + LeapYear.isLeapYear(-1600));
+        System.out.println("Leap year is " + LeapYear.isLeapYear(1600));
+        System.out.println("Leap year is " + LeapYear.isLeapYear(2017));
+        System.out.println("Leap year is " + LeapYear.isLeapYear(2000));
     }
 
     public static void displayHighScorePosition(String playerName, int position){
