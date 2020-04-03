@@ -82,6 +82,12 @@ public class Main {
         System.out.println("Leap year is " + LeapYear.isLeapYear(1600));
         System.out.println("Leap year is " + LeapYear.isLeapYear(2017));
         System.out.println("Leap year is " + LeapYear.isLeapYear(2000));
+
+        int newScore = calculateScore("Mkpo-uto", 500);
+        System.out.println("New Score is " + newScore);
+
+        calcFeetAndInchesToCentimeters(7,0);
+        calcFeetAndInchesToCentimeters(-10);
     }
 
     public static void displayHighScorePosition(String playerName, int position){
@@ -121,6 +127,38 @@ public class Main {
             return finalScore;
         } else {
             return -1;
+        }
+    }
+
+    public static int calculateScore(String playerName, int score){
+        System.out.println("Player " + playerName + " scored " +  score + " points");
+        return score * 1000;
+    }
+
+    public static double calcFeetAndInchesToCentimeters(double feet, double inches){
+        double centimeters = -1;
+        if(feet < 0 || (inches < 0) || (inches > 12 )){
+            System.out.println("Invalid feet or inches parameter");
+            return centimeters;
+        } else {
+            centimeters = inches * 2.54 + (feet * 12) * 2.54;
+            System.out.println(feet + " feet, " + inches + " inches = " + centimeters + " cm");
+            return centimeters;
+        }
+    }
+
+
+
+    public static double calcFeetAndInchesToCentimeters(double inches){
+        double centimeters = -1; double feet = 1;
+        if(inches < 0 ){
+            return centimeters;
+        } else {
+            feet = (int) inches / 12;
+            double remainingInches = (int)inches % 12;
+            System.out.println(inches + " inches is equal to " + feet + " feet and " + remainingInches + " inches");
+            centimeters = calcFeetAndInchesToCentimeters(feet,remainingInches);
+            return centimeters;
         }
     }
 }
