@@ -64,6 +64,10 @@ public class Main {
         position = calculateHighScorePosition(100);
         displayHighScorePosition("NASDAQ", position);
 
+        long miles = SpeedConverter.toMilesPerHour(10.5);
+        System.out.println("Miles = " + miles);
+
+        SpeedConverter.printConversion(10.5);
 
     }
 
@@ -74,15 +78,26 @@ public class Main {
 
     public static int calculateHighScorePosition(int playerScore){
 
-        if(playerScore >= 1000 ){
-            return  1;
-        } else if (playerScore >= 500 && playerScore < 1000){
-            return 2;
-        } else if (playerScore >= 100 && playerScore < 500){
-            return 3;
-        } else {
-            return 4;
+//        if(playerScore >= 1000 ){
+//            return  1;
+//        } else if (playerScore >= 500 ){
+//            return 2;
+//        } else if (playerScore >= 100 ){
+//            return 3;
+//        }
+//            return 4;
+
+        int position = 4; //assuming position 4 will be returned
+
+        if(playerScore >= 1000){
+            position = 1;
+        } else if(playerScore >= 500){
+            position = 2;
+        } else if(playerScore >= 100){
+            position = 3;
         }
+
+        return position;
 
     }
 
