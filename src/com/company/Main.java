@@ -69,6 +69,14 @@ public class Main {
 
         SpeedConverter.printConversion(10.5);
 
+        boolean wakeUpValue = BarkingDog.shouldWakeUp(true, 22);
+        System.out.println(" Output " + wakeUpValue + " should be false");
+
+        wakeUpValue = BarkingDog.shouldWakeUp(true, 44);
+        System.out.println(" Output " + wakeUpValue + " should be false");
+
+        wakeUpValue = BarkingDog.shouldWakeUp(true, -1);
+        System.out.println(" Output " + wakeUpValue + " should be false");
     }
 
     public static void displayHighScorePosition(String playerName, int position){
