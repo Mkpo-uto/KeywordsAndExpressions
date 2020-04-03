@@ -26,7 +26,8 @@ public class Main {
         int levelCompleted = 5;
         int bonus = 100;
 
-        calculateScore(gameOver, score, levelCompleted, bonus);
+        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
 
         if(score <5000 && score > 1000){
             System.out.println("Your score was less than 5000 but greater than 1000");
@@ -39,14 +40,59 @@ public class Main {
         score = 1000;
         levelCompleted = 8;
         bonus = 200;
-        calculateScore(gameOver, score, levelCompleted, bonus);
+        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
+
+        int position = calculateHighScorePosition(1500);
+        displayHighScorePosition("Mkpo-uto", position);
+
+        position = calculateHighScorePosition(900);
+        displayHighScorePosition("Edima", position);
+
+        position = calculateHighScorePosition(400);
+        displayHighScorePosition("Etimbuk", position);
+
+        position = calculateHighScorePosition(50);
+        displayHighScorePosition("InyeneObong", position);
+
+        position = calculateHighScorePosition(1000);
+        displayHighScorePosition("NAB", position);
+
+        position = calculateHighScorePosition(500);
+        displayHighScorePosition("Tyro", position);
+
+        position = calculateHighScorePosition(100);
+        displayHighScorePosition("NASDAQ", position);
+
+
     }
 
-    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
+    public static void displayHighScorePosition(String playerName, int position){
+        System.out.println(playerName + " managed to get into position " + position
+                + " on the high score table");
+    }
+
+    public static int calculateHighScorePosition(int playerScore){
+
+        if(playerScore >= 1000 ){
+            return  1;
+        } else if (playerScore >= 500 && playerScore < 1000){
+            return 2;
+        } else if (playerScore >= 100 && playerScore < 500){
+            return 3;
+        } else {
+            return 4;
+        }
+
+    }
+
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
         if(gameOver == true){
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 1000;
-            System.out.println("Your final score was " + finalScore);
+            return finalScore;
+        } else {
+            return -1;
         }
     }
 }
