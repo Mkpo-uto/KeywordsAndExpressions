@@ -88,6 +88,30 @@ public class Main {
 
         calcFeetAndInchesToCentimeters(7,0);
         calcFeetAndInchesToCentimeters(-10);
+
+        System.out.println(SecondsAndMinutesChallenge.getDurationString(65,45));
+        System.out.println(SecondsAndMinutesChallenge.getDurationString(3945));
+        System.out.println(SecondsAndMinutesChallenge.getDurationString(-41));
+        System.out.println(SecondsAndMinutesChallenge.getDurationString(65, 9));
+
+        System.out.println(AreaCalculator.area(5.0, 4.0));
+        System.out.println(AreaCalculator.area(-1.0, 4.0));
+        System.out.println(AreaCalculator.area(5.0));
+        System.out.println(AreaCalculator.area(-1));
+
+        MinutesToYearsDaysCalculator.printYearsAndDays(525600);
+        MinutesToYearsDaysCalculator.printYearsAndDays(1051200);
+        MinutesToYearsDaysCalculator.printYearsAndDays(561600);
+        MinutesToYearsDaysCalculator.printYearsAndDays(-525600);
+
+        IntEqualityPrinter.printEqual(1,1,1);
+        IntEqualityPrinter.printEqual(1,1,2);
+        IntEqualityPrinter.printEqual(-1,-1,-1);
+        IntEqualityPrinter.printEqual(1,2,3);
+
+        System.out.println(PlayingCat.isCatPlaying(true, 10));
+        System.out.println(PlayingCat.isCatPlaying(false, 36));
+        System.out.println(PlayingCat.isCatPlaying(false, 35));
     }
 
     public static void displayHighScorePosition(String playerName, int position){
@@ -147,8 +171,6 @@ public class Main {
         }
     }
 
-
-
     public static double calcFeetAndInchesToCentimeters(double inches){
         double centimeters = -1; double feet = 1;
         if(inches < 0 ){
@@ -161,4 +183,6 @@ public class Main {
             return centimeters;
         }
     }
+
+
 }
